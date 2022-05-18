@@ -3,14 +3,14 @@ from Maze_graph import Graph, Node
 
 class Maze:
 
-    def __init__(self, file: object, graph) -> object:
-        self.file = file
+    def __init__(self, filename, graph):
+        self.file = filename
         self.graph = graph
         self.maze = []
         self.number_of_column = 0
         self.line = 0
 
-    def read_file(self) -> Node:
+    def read_file(self):
         print('Lendo o arquivo')
         f = open(self.file, "r")
 
@@ -32,14 +32,15 @@ class Maze:
         element = mazeLine[col]
         return element == "#"
 
-    def can_goto_wright(self,current):
-        # pode ir para direita (linha + 1)
-        # fazer a lógica
-        if ! wall(self, ...):
+    # def can_goto_wright(self,current):
+    #     pode ir para direita (linha + 1)
+    #     fazer a lógica
+    #         if ! wall(self, ...):
 
-        return False
+    #     return False
 
     def find_next(self, current):
+        'teste'
         # pode ir para frente (coluna + 1)
         # pode ir para esquerda (linha - 1)
         # pode ir para traz (coluna -1)
@@ -55,7 +56,7 @@ class Maze:
         return next_node
 
     def solve(self):
-        start_node = self.read_file
+        start_node = self.read_file()
         next_node = self.next_node(start_node)
         print('start')
         print(start_node.line)
@@ -70,5 +71,6 @@ class Maze:
 
 
 if __name__ == '__main__':
-    problem = Maze('C:\\Users\\ezio.freire\\PycharmProjects\\labirinto\\maze.txt', Graph(1))
+    #problem = Maze('C:\\Users\\ezio.freire\\PycharmProjects\\labirinto\\maze.txt', Graph(1))
+    problem = Maze('maze.txt', Graph(1))
     problem.solve()
